@@ -11,8 +11,9 @@ public:
 	static const int HERO_WIDTH = 100;
 	static const int HERO_HEIGHT = 200;
 	static const int BRIEF_INV = 800;
+	static const int ACCEL = 750;
 
-	//Maximum axis velocity of the xwing
+	//Maximum axis velocity of the hero
 	static const int HERO_VEL = 400;
 
 	enum sprites{rstand,rrun1,rrun2,rjump,lstand,lrun1,lrun2,ljump};

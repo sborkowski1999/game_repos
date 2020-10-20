@@ -60,7 +60,7 @@ bool Hero::checkPlatform(SDL_Rect a, Tile *tiles[]) { //Detects if batman is on 
 			centerB = tiles[i]->getBox().x + tiles[i]->getBox().w/2;
 			topB = tiles[i]->getBox().y;
 
-			if (topB == bottomA && abs(centerA-centerB) <= 40)
+			if (topB == bottomA-4 && abs(centerA-centerB) <= 40)
 			{
 				return true;
 			}
@@ -167,7 +167,7 @@ void Hero::move(float timeStep, Tile* tiles[])
 	}
 	if (!on_platform) {
 		mPosY += mVelY * timeStep; //Move the hero up or down and accelerate
-		mVelY += 750 * timeStep;
+		mVelY += ACCEL * timeStep;
 		if (mVelX > 0) current_clip = &gHeroClips[rjump]; //show sprite clips depending on orientation
 		else if (mVelX < 0) current_clip = &gHeroClips[ljump];
 		else if (current_clip == &gHeroClips[rstand]) current_clip = &gHeroClips[rjump];
