@@ -1,0 +1,3 @@
+﻿  hero.cpp
+c:\users\steve\source\repos\game\game\hero.cpp(208): warning C4305: '=': truncation from 'double' to 'float'
+  game.vcxproj -> C:\Users\steve\source\repos\game\x64\Debug\game.exe
