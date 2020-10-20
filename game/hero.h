@@ -16,8 +16,8 @@ public:
 	//Maximum axis velocity of the hero
 	static const int HERO_VEL = 400;
 
-	enum sprites{rstand,rrun1,rrun2,rjump,lstand,lrun1,lrun2,ljump};
-	static const int SPRITES = 8;
+	enum sprites{rstand,rrun1,rrun2,rjump,lstand,lrun1,lrun2,ljump,lpunch,rpunch};
+	static const int SPRITES = 10;
 	SDL_Rect gHeroClips[SPRITES];
 	SDL_Rect* current_clip;
 

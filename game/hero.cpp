@@ -130,6 +130,16 @@ Hero::Hero()
 	gHeroClips[ljump].y = 101 * 2;
 	gHeroClips[ljump].w = 60 * 2;
 	gHeroClips[ljump].h = 100 * 2;
+
+	gHeroClips[lpunch].x = 602;
+	gHeroClips[lpunch].y = 201;
+	gHeroClips[lpunch].w = 180;
+	gHeroClips[lpunch].h = 200;
+
+	gHeroClips[rpunch].x = 602;
+	gHeroClips[rpunch].y = 0;
+	gHeroClips[rpunch].w = 180;
+	gHeroClips[rpunch].h = 200;
 }
 
 void Hero::move(float timeStep, Tile* tiles[])
@@ -215,6 +225,16 @@ void Hero::handleEvent(SDL_Event& e)
 		case SDLK_RIGHT:
 			mVelX += HERO_VEL;
 			if (on_platform) current_clip = &gHeroClips[rrun1];
+			break;
+		case SDLK_c:
+			if (current_clip == &gHeroClips[lrun1] || current_clip == &gHeroClips[lrun2] || current_clip == &gHeroClips[lstand])
+			{
+				current_clip = &gHeroClips[lpunch];
+			}
+			else if (current_clip == &gHeroClips[rrun1] || current_clip == &gHeroClips[rrun2] || current_clip == &gHeroClips[rstand])
+			{
+				current_clip = &gHeroClips[rpunch];
+			}
 			break;
 		}
 	}
